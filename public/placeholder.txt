@@ -1,0 +1,1 @@
+Put your public assets here. Add author.jpg at /public/author.jpg and cover images at /public/cover-book1.jpg etc.
