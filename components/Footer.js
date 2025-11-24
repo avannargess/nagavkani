@@ -4,14 +4,9 @@ export default function Footer() {
       <div className="container">
         <p>© {new Date().getFullYear()} N. A. Gavkani — <em>Dragon & Daffodil</em></p>
         <p className="small">
-          © {new Date().getFullYear()} N. A. Gavkani All Rights Reserved ·{" "}
-          <a
-            href="https://vercel.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vercel deployment recommended
-          </a>
+          © {new Date().getFullYear()} N. A. Gavkani All Rights Reserved {" "}
+         
+          
         </p>
       </div>
     </footer>
