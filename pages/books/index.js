@@ -10,7 +10,7 @@ export default function Books() {
   return (
     <section className="page books">
       <div className="container">
-        <h2>Dragon & Daffodil — The Trilogy</h2>
+        <h2 classname="hero"> Dragon & Daffodil — The Trilogy </h2>
         <p className="lead">A YA fantasy trilogy about courage, persuit of truth, and the price and promise of integrity.</p>
         <div className="book-list">
           {books.map(b => (

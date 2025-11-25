@@ -4,7 +4,10 @@ import Link from 'next/link'
 const bookData = {
   'the-beginning': {
     title: 'The Beginning',
-    content: `Book One: The Beginning — (non-spoiler) In a kingdom braided with dragon treaties and human cities, a young protagonist discovers a secret that could unravel centuries of balance.`,
+    content: `Book One: The Beginning — (non-spoiler) In a kingdom where the fates of humans and dragons coil tightly together,
+     a young protagonist uncovers a secret capable of unmaking centuries of harmony. 
+     Their journey is shaped by hidden trials and the brave, 
+    integral choices that carve a path toward a deeper freedom.`,
     status: 'Completed — querying for representation'
   },
   'the-journey': {

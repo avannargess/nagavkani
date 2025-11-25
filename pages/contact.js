@@ -34,8 +34,8 @@ export default function Contact() {
   return (
     <div style={{ maxWidth: '600px', margin: '0 auto', color: '#fff' }}>
       <h2>Contact Me</h2>
-      <p classname= "lead"> info@nagavkani.com <br/>
-      avan.nargess@gmail.com </p>
+      <p classname= "lead">info@nagavkani.com <br/>
+      contact@nagavkani.com<br/> </p>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
         <input
           name="name"
