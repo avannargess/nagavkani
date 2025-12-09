@@ -70,7 +70,7 @@ nav a{
 .hero-text h2{
   margin:0;
   font-size:40px;
-  color:var(--accent);
+  color:var(--text);
   letter-spacing:0.5px;
 }
 .hero-text h3{ margin:8px 0 20px; color:var(--accent); }

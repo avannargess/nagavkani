@@ -8,7 +8,7 @@ export default function About() {
             <img src="/author.jpg" alt="Author photo" className="author-photo" />
           </div>
           <div>
-            <p>BN. A. Gavkani was born and raised in a faraway land, where her early curiosity about the “why” and “how” of the world grew into a lifelong fascination with physics, philosophy, and the complexities of the human mind. Influenced by the teachings of Persia’s Rumi and Khayyam, as well as Western thinkers such as Nietzsche, she views storytelling as the most meaningful way to bridge the world within her and the world outside.
+            <p>N. A. Gavkani was born and raised in a faraway land, where her early curiosity about the “why” and “how” of the world grew into a lifelong fascination with physics, philosophy, and the complexities of the human mind. Influenced by the teachings of Persia’s Rumi and Khayyam, as well as Western thinkers such as Nietzsche, she views storytelling as the most meaningful way to bridge the world within her and the world outside.
 She holds a PhD in Physics—a background that informs her love of building rich, internally consistent worlds and magic systems. Though scientifically trained, her creative work gravitates toward emotionally resonant, myth-driven narratives with strong psychological and philosophical undercurrents. Her stories explore hidden inner strengths, the shadows people wrestle with, and the difficult truths they must face to become who they are meant to be.
 Dragon and Daffodil — The Beginning is her debut novel and the first in a planned trilogy. She has completed Book One and is currently seeking representation.</p>
             <h4>Quick facts</h4>
