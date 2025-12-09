@@ -8,9 +8,9 @@ export default function About() {
             <img src="/author.jpg" alt="Author photo" className="author-photo" />
           </div>
           <div>
-            <p>Born and raised in a faraway land,<strong> N. A. Gavkani</strong> has always followed her curiosity about the <strong> "Why"</strong> and the <strong> "How"</strong> of the world around her. 
-            That pursuit led to a love of physics and a passion for philosophy. Influenced by the teachings of Persia’s Rumi and Khayyam, as well as Western thinkers such as Nietzsche, she finds storytelling the most meaningful way to share the world within her with the one outside.</p>
-            <p>By training, she holds a PhD in Physics — a background that shapes her love for building rich, internally consistent worlds and magic systems. She has completed Book One of the <strong>Dragon & Daffodil</strong> trilogy and is currently seeking representation.</p>
+            <p>BN. A. Gavkani was born and raised in a faraway land, where her early curiosity about the “why” and “how” of the world grew into a lifelong fascination with physics, philosophy, and the complexities of the human mind. Influenced by the teachings of Persia’s Rumi and Khayyam, as well as Western thinkers such as Nietzsche, she views storytelling as the most meaningful way to bridge the world within her and the world outside.
+She holds a PhD in Physics—a background that informs her love of building rich, internally consistent worlds and magic systems. Though scientifically trained, her creative work gravitates toward emotionally resonant, myth-driven narratives with strong psychological and philosophical undercurrents. Her stories explore hidden inner strengths, the shadows people wrestle with, and the difficult truths they must face to become who they are meant to be.
+Dragon and Daffodil — The Beginning is her debut novel and the first in a planned trilogy. She has completed Book One and is currently seeking representation.</p>
             <h4>Quick facts</h4>
             <ul>
               <li>Pen name: N. A. Gavkani</li>
