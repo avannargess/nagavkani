@@ -8,7 +8,7 @@ export default function Header() {
           <Link href="/">
             N. A. Gavkani
           </Link>
-          <p className="tagline">Dragon & Daffodil — YA Fantasy</p>
+          <p className="tagline">Author of Paint Me a Different Color</p>
         </div>
         <nav>
           <Link href="/">Home</Link>

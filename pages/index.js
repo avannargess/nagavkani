@@ -1,28 +1,82 @@
 import Link from 'next/link'
+import { paintSeries, dragonDaffodilSeries } from '../data/series'
 
 export default function Home() {
+  const bookOne = paintSeries.books[0]
+
   return (
-    <section className="hero">
-      <div className="hero-inner">
-        <div className="hero-text">
-          <h2>Dragon & Daffodil</h2>
-          <h3>YA Fantasy — a trilogy by N. A. Gavkani</h3>
-          <p className="lead">In a realm where ancient magic entwines the fates of humans and dragons, 
-            the Gods challenge all who dare to pursue truth and live with unwavering integrity in the pursuit of 
-            freedom for all. <br/>
-             </p>
-          <div className="cta">
-            <Link href="/books"className="btn ghost">Explore the Trilogy</Link>
-            <Link href="/about"className="btn ghost">About the Author</Link>
+    <>
+      <section className="hero">
+        <div className="hero-inner">
+          <div className="hero-text">
+            <p className="eyebrow">Now available</p>
+            <span className="badge-new">Just Released</span>
+            <h1>{paintSeries.title}</h1>
+            <h2 className="hero-tagline">{paintSeries.tagline}</h2>
+            <p className="lead">{paintSeries.description}</p>
+            <div className="cta">
+              <a
+                href={bookOne.buyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn primary"
+              >
+                Buy the Ebook on Amazon
+              </a>
+              <Link href={`/books/${bookOne.slug}`} className="btn ghost">
+                Read More
+              </Link>
+            </div>
+          </div>
+          <div className="hero-art">
+            <img
+              src={paintSeries.coverImage}
+              alt={`${paintSeries.title} cover`}
+              className="cover-image"
+            />
           </div>
         </div>
-        <div className="hero-art">
-            <img src="/Cover3.jpg" alt="cover" className="cover-placeholder" />
-          
+      </section>
+
+      <section className="series-roadmap">
+        <div className="container">
+          <h3>The Full Series</h3>
+          <p className="lead small-lead">
+            Five allegorical stories, one unfolding war. Here&rsquo;s what&rsquo;s next.
+          </p>
+          <div className="roadmap-list">
+            {paintSeries.books.map((b) => (
+              <div key={b.slug} className={`roadmap-item status-${b.status}`}>
+                <span className="roadmap-order">{String(b.order).padStart(2, '0')}</span>
+                <div>
+                  <h4>{b.title}</h4>
+                  <span className="status-pill">{b.statusLabel}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
+
+      <section className="also-writing">
+        <div className="container also-writing-inner">
+          <div className="also-writing-art">
+            <img
+              src={dragonDaffodilSeries.coverImage}
+              alt={`${dragonDaffodilSeries.title} cover`}
+              className="cover-image small"
+            />
+          </div>
+          <div>
+            <p className="eyebrow">Coming later</p>
+            <h3>{dragonDaffodilSeries.title}</h3>
+            <p className="lead small-lead">{dragonDaffodilSeries.description}</p>
+            <Link href="/books" className="btn ghost">
+              Learn More
+            </Link>
+          </div>
         </div>
-     
-    </section>
+      </section>
+    </>
   )
 }
-

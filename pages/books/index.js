@@ -1,26 +1,44 @@
 import Link from 'next/link'
+import { paintSeries, dragonDaffodilSeries } from '../../data/series'
 
-const books = [
-  { slug: 'the-beginning', title: 'The Beginning', excerpt: 'Book One: A young heroine discovers a danger that could shatter both human and dragon realms.' },
-  { slug: 'the-journey', title: 'The Journey', excerpt: 'Book Two: The adventure expands; alliances are tested.' },
-  { slug: 'the-end', title: 'The End', excerpt: 'Book Three: The final confrontation and resolution.' },
-]
+function SeriesSection({ series, badge }) {
+  return (
+    <div className="series-section">
+      <div className="series-section-head">
+        <h2>{series.title}</h2>
+        {badge && <span className="status-pill">{badge}</span>}
+      </div>
+      <p className="lead small-lead">{series.description}</p>
+      <div className="book-list">
+        {series.books.map((b) => (
+          <article key={b.slug} className={`book-card status-${b.status}`}>
+            <span className="status-pill">{b.statusLabel}</span>
+            <h3>{b.title}</h3>
+            <p>{b.description.length > 140 ? b.description.slice(0, 140) + '…' : b.description}</p>
+            <div className="book-card-actions">
+              <Link href={`/books/${b.slug}`} className="small">
+                Read more
+              </Link>
+              {b.buyUrl && (
+                <a href={b.buyUrl} target="_blank" rel="noopener noreferrer" className="small buy-link">
+                  Buy on Amazon
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default function Books() {
   return (
     <section className="page books">
       <div className="container">
-        <h2 classname="hero"> Dragon & Daffodil — The Trilogy </h2>
-        <p className="lead">A YA fantasy trilogy about courage, persuit of truth, and the price and promise of integrity.</p>
-        <div className="book-list">
-          {books.map(b => (
-            <article key={b.slug} className="book-card">
-              <h3>{b.title}</h3>
-              <p>{b.excerpt}</p>
-              <Link href={`/books/${b.slug}`}className="small">Read more</Link>
-            </article>
-          ))}
-        </div>
+        <h1 className="page-title">Books</h1>
+        <SeriesSection series={paintSeries} />
+        <SeriesSection series={dragonDaffodilSeries} badge="Coming later" />
       </div>
     </section>
   )

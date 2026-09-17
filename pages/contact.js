@@ -32,46 +32,39 @@ export default function Contact() {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', color: '#fff' }}>
-      <h2>Contact Me</h2>
-      <p classname= "lead">info@nagavkani.com <br/>
-  </p>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-        <input
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          style={{ padding: '10px', background: '#222', color: '#fff', border: '1px solid #555' }}
-        />
-        <input
-          name="email"
-          type="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          style={{ padding: '10px', background: '#222', color: '#fff', border: '1px solid #555' }}
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          rows="5"
-          style={{ padding: '10px', background: '#222', color: '#fff', border: '1px solid #555' }}
-        />
-        <button
-          type="submit"
-          style={{ padding: '10px', background: '#555', color: '#fff', border: 'none', cursor: 'pointer' }}
-        >
-          Send
-        </button>
-      </form>
-      <p>{status}</p>
-    </div>
+    <section className="page contact-page">
+      <div className="container" style={{ maxWidth: '600px' }}>
+        <h1 className="page-title">Contact Me</h1>
+        <p className="lead">info@nagavkani.com</p>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+          <input
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            name="email"
+            type="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            rows="5"
+          />
+          <button type="submit">Send</button>
+        </form>
+        <p>{status}</p>
+      </div>
+    </section>
   );
 }
 

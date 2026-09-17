@@ -1,71 +1,44 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-
-const bookData = {
-  'the-beginning': {
-    title: 'The Beginning',
-    content: `Book One: The Beginning — (non-spoiler) In a kingdom where the fates of humans and dragons coil tightly together,
-     a young protagonist uncovers a secret capable of unmaking centuries of harmony. 
-     Their journey is shaped by hidden trials and the brave, 
-    integral choices that carve a path toward a deeper freedom.`,
-    status: 'Completed — querying for representation', 
-  },
-
-
-  'the-journey': {
-    title: 'The Journey',
-    content: 'Book Two: The Journey — (planned) The characters face newfound challenges as the world expands.',
-    status: 'Planned'
-  },
-  'the-end': {
-    title: 'The End',
-    content: 'Book Three: The End — (planned) The trilogy conclusion.',
-    status: 'Planned'
-  }
-}
+import { findBook } from '../../data/series'
 
 export default function BookSlug() {
   const router = useRouter()
   const { slug } = router.query
-  const data = slug ? bookData[slug] : null
+  const result = slug ? findBook(slug) : null
 
-  if (!data) return <div className="container"><p>Loading…</p></div>
+  if (!result) return <div className="container"><p>Loading…</p></div>
+
+  const { book, series } = result
 
   return (
     <section className="page book-detail">
       <div className="container">
-        <h2>{data.title}</h2>
-        <p className="status">{data.status}</p>
-        <p>{data.content}</p>
-        <h3><strong>Note:</strong> Book One is complete and currently being queried to agents.</h3>
+        <p className="eyebrow">{series.title}</p>
+        <h1>{book.title}</h1>
+        <span className="status-pill">{book.statusLabel}</span>
+        <p className="book-detail-text">{book.description}</p>
 
-        <h3><Link href="/contact">Contact</Link> for press, permissions, or agent queries.</h3>
-    <p><strong>Dragon and Daffodil–The Beginning </strong> <br/>
-  </p>
-    <ol>
-      Chapter 1 – A Dragon in Chains<br/>
-      Chapter 2 – The Canyon in Between<br/>
-      Chapter 3 – A Cursed Castle<br/>
-      Chapter 4 – A Curse of Blood<br/>
-      Chapter 5 – A Hidden Path<br/>
-      Chapter 6 – A Foolish Dream<br/>
-      Chapter 7 – A Game of Fate<br/>
-      Chapter 8 – A Prophecy of Gods<br/>
-      Chapter 9 – The Rule of Humanity<br/>
-      Chapter 10 – Forging a Way<br/>
-      Chapter 11 – Flying to Infinity<br/>
-      Chapter 12 – The Fountain of Truth<br/>
-      Chapter 13 – The Alliance of Differences<br/>
-      Chapter 14 – Coming Together<br/>
-      Chapter 15 – The Return of Fire<br/>
-      Chapter 16 – The Mountain of Fire<br/>
-      Chapter 17 – At the End of the World<br/>
-    </ol>
+        {book.buyUrl && (
+          <a
+            href={book.buyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn primary"
+          >
+            Buy the Ebook on Amazon
+          </a>
+        )}
 
+        {!book.buyUrl && (
+          <p className="lead small-lead">
+            This title isn&rsquo;t available yet — <Link href="/contact">get in touch</Link> or check back for updates.
+          </p>
+        )}
 
-
-
-        
+        <div className="book-detail-footer">
+          <Link href="/books">&larr; Back to all books</Link>
+        </div>
       </div>
     </section>
   )
