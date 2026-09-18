@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function About() {
   return (
     <section className="page about">
@@ -17,6 +19,14 @@ Her debut work, Paint Me a Different Color, is the first in a five-part allegori
               <li>Paint Me a Different Color (5-part series) — Book 1 available now, Book 2 coming soon</li>
               <li>Dragon & Daffodil (YA Fantasy trilogy) — in progress</li>
             </ul>
+            <div className="about-cta">
+              <p className="lead small-lead">
+                Have a question, an interview request, or just want to say hello?
+              </p>
+              <Link href="/contact" className="btn primary">
+                Get in Touch
+              </Link>
+            </div>
           </div>
         </div>
       </div>

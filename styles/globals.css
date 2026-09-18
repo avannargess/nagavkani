@@ -304,6 +304,8 @@ nav a:hover { color: var(--accent); }
 .page.about h4 { margin-top: 30px; font-size: 18px; }
 .page.about ul { padding-left: 20px; }
 .page.about li { margin-bottom: 6px; }
+.about-cta { margin-top: 36px; }
+.about-cta .lead { margin-bottom: 16px; }
 
 /* Footer */
 .site-footer {
