@@ -1,45 +1,63 @@
 import Link from 'next/link'
-import { paintSeries, dragonDaffodilSeries } from '../../data/series'
+import { paintSeries } from '../data/series'
 
-function SeriesSection({ series, badge }) {
+export default function Home() {
+  const bookOne = paintSeries.books[0]
+
   return (
-    <div className="series-section">
-      <div className="series-section-head">
-        <h2>{series.title}</h2>
-        {badge && <span className="status-pill">{badge}</span>}
-      </div>
-      <p className="lead small-lead">{series.description}</p>
-      <div className="book-list">
-        {series.books.map((b) => (
-          <article key={b.slug} className={`book-card status-${b.status}`}>
-            <span className="status-pill">{b.statusLabel}</span>
-            <h3>{b.title}</h3>
-            <p>{b.description.length > 140 ? b.description.slice(0, 140) + '…' : b.description}</p>
-            <div className="book-card-actions">
-              <Link href={`/books/${b.slug}`} className="small">
-                Read more
+    <>
+      <section className="hero">
+        <div className="hero-inner">
+          <div className="hero-text">
+            <p className="eyebrow">Now available</p>
+            <span className="badge-new">Just Released</span>
+            <h1>{paintSeries.title}</h1>
+            <h2 className="hero-tagline">{paintSeries.tagline}</h2>
+            <p className="lead">{paintSeries.description}</p>
+            <div className="cta">
+              <a
+                href={bookOne.buyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn primary"
+              >
+                Buy the Ebook on Amazon
+              </a>
+              <Link href={`/books/${bookOne.slug}`} className="btn ghost">
+                Read More
               </Link>
-              {b.buyUrl && (
-                <a href={b.buyUrl} target="_blank" rel="noopener noreferrer" className="small buy-link">
-                  Buy on Amazon
-                </a>
-              )}
             </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  )
-}
+          </div>
+          <div className="hero-art">
+            <img
+              src={paintSeries.coverImage}
+              alt={`${paintSeries.title} cover`}
+              className="cover-image"
+            />
+          </div>
+        </div>
+      </section>
 
-export default function Books() {
-  return (
-    <section className="page books">
-      <div className="container">
-        <h1 className="page-title">Books</h1>
-        <SeriesSection series={paintSeries} />
-        <SeriesSection series={dragonDaffodilSeries} badge="Coming later" />
-      </div>
-    </section>
+      <section className="series-roadmap">
+        <div className="container">
+          <h3>The Full Series</h3>
+          <p className="lead small-lead">
+            Five allegorical stories, one unfolding war. Here&rsquo;s what&rsquo;s next.
+          </p>
+          <div className="roadmap-list">
+            {paintSeries.books.map((b) => (
+              <div key={b.slug} className={`roadmap-item status-${b.status}`}>
+                <span className="roadmap-order">{String(b.order).padStart(2, '0')}</span>
+                <div>
+                  <h4>{b.title}</h4>
+                  <span className="status-pill">{b.statusLabel}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </>
   )
 }
