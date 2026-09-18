@@ -58,25 +58,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="also-writing">
-        <div className="container also-writing-inner">
-          <div className="also-writing-art">
-            <img
-              src={dragonDaffodilSeries.coverImage}
-              alt={`${dragonDaffodilSeries.title} cover`}
-              className="cover-image small"
-            />
-          </div>
-          <div>
-            <p className="eyebrow">Coming later</p>
-            <h3>{dragonDaffodilSeries.title}</h3>
-            <p className="lead small-lead">{dragonDaffodilSeries.description}</p>
-            <Link href="/books" className="btn ghost">
-              Learn More
-            </Link>
-          </div>
-        </div>
-      </section>
+ 
     </>
   )
 }
