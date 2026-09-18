@@ -248,6 +248,13 @@ nav a:hover { color: var(--accent); }
   align-items: center;
 }
 .also-writing-inner > div:last-child { flex: 1.3; }
+.books-teaser {
+  margin: 50px 0 70px;
+  padding: 36px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
 
 /* Page generic */
 .page-title { font-size: 38px; margin-bottom: 40px; }
