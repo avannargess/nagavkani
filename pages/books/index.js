@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { paintSeries } from '../data/series'
+import { paintSeries } from '../../data/series'
 
 export default function Home() {
   const bookOne = paintSeries.books[0]
