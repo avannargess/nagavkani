@@ -267,7 +267,7 @@ nav a:hover { color: var(--accent); }
 }
 
 /* Page generic */
-.page-title { font-size: 38px; margin-bottom: 40px; }
+.page-title { font-size: 38px; margin-bottom: 40px; color: var(--accent); }
 .page.about h2,
 .page.books h2 { font-size: 32px; }
 
