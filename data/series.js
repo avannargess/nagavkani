@@ -6,7 +6,7 @@ export const paintSeries = {
   tagline: 'A short story series — an allegory of war',
   description:
     "A five-part allegorical series about war, identity, free will, and the fragile differences that divide us. Told through soldiers, commanders, and lovers caught in a conflict none of them chose.",
-  coverImage: '/Paint Me a Different Color.TIFF',
+  coverImage: '/paint-me-cover-placeholder.svg',
   books: [
     {
       slug: 'paint-me-a-different-color',
@@ -23,10 +23,13 @@ export const paintSeries = {
       slug: 'call-me-a-different-name',
       order: 2,
       title: 'Call Me a Different Name',
-      status: 'coming-soon',
-      statusLabel: 'Coming soon',
+      status: 'published',
+      statusLabel: 'Available now',
+      isNew: true,
+      buyUrl: 'https://www.amazon.com/dp/B0HLQBRF1V',
+      coverImage: '/call-me-a-different-name-cover.jpg',
       description:
-        'Book Two in the Paint Me a Different Color series. Details coming soon.',
+        'On a merciless battlefield, soldiers are ordered to fight, sacrifice, and die for rulers who do not know their names. But beneath their armor, they are brothers, lovers, and ordinary people haunted by impossible choices. As grief spreads across enemy lines, they begin questioning the identities forced upon them—and the unseen powers deciding their fate. What if the enemy is not so different? And what must be lost before someone finally refuses to play their assigned role?',
     },
     {
       slug: 'dub-me-a-different-title',
