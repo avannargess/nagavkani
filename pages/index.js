@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { paintSeries, dragonDaffodilSeries } from '../../data/series'
+import { paintSeries, dragonDaffodilSeries } from '../data/series'
 
 function SeriesSection({ series, badge, hideIntro }) {
   return (
