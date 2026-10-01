@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import { paintSeries, dragonDaffodilSeries } from '../data/series'
+import { paintSeries } from '../data/series'
 
 export default function Home() {
-  const bookOne = paintSeries.books[0]
+  const publishedBooks = paintSeries.books.filter((b) => b.status === 'published')
+  const newBook = paintSeries.books.find((b) => b.isNew) || publishedBooks[0]
 
   return (
     <>
@@ -10,21 +11,29 @@ export default function Home() {
         <div className="hero-inner">
           <div className="hero-text">
             <p className="eyebrow">Now available</p>
-            <span className="badge-new">Just Released</span>
+            {newBook && (
+              <Link href={`/books/${newBook.slug}`} className="badge-new">
+                New: {newBook.title}
+              </Link>
+            )}
             <h1>{paintSeries.title}</h1>
             <h2 className="hero-tagline">{paintSeries.tagline}</h2>
             <p className="lead">{paintSeries.description}</p>
             <div className="cta">
-              <a
-                href={bookOne.buyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn primary"
-              >
-                Buy the Ebook on Amazon
-              </a>
-              <Link href={`/books/${bookOne.slug}`} className="btn ghost">
-                Read More
+              {publishedBooks.map((b) => (
+                <a
+                  key={b.slug}
+                  href={b.buyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn primary"
+                  aria-label={`Buy ${b.title} on Amazon`}
+                >
+                  Buy Book {b.order}: {b.title}
+                </a>
+              ))}
+              <Link href="/books" className="btn ghost">
+                See the Full Series
               </Link>
             </div>
           </div>
@@ -48,17 +57,25 @@ export default function Home() {
             {paintSeries.books.map((b) => (
               <div key={b.slug} className={`roadmap-item status-${b.status}`}>
                 <span className="roadmap-order">{String(b.order).padStart(2, '0')}</span>
-                <div>
+                <div className="roadmap-item-text">
                   <h4>{b.title}</h4>
                   <span className="status-pill">{b.statusLabel}</span>
                 </div>
+                {b.buyUrl && (
+                  <a
+                    href={b.buyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="small buy-link roadmap-buy"
+                  >
+                    Buy on Amazon
+                  </a>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
-
- 
     </>
   )
 }

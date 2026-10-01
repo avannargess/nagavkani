@@ -6,7 +6,7 @@ export const paintSeries = {
   tagline: 'A short story series — an allegory of war',
   description:
     "A five-part allegorical series about war, identity, free will, and the fragile differences that divide us. Told through soldiers, commanders, and lovers caught in a conflict none of them chose.",
-  coverImage: '/paint-me-cover-placeholder.svg',
+  coverImage: '/paint-me-a-different-color-cover.jpg',
   books: [
     {
       slug: 'paint-me-a-different-color',
@@ -16,6 +16,7 @@ export const paintSeries = {
       statusLabel: 'Available now',
       buyUrl:
         'https://www.amazon.com/Paint-Me-Different-Color-Obedience-ebook/dp/B0HK1X8BL2',
+      coverImage: '/paint-me-a-different-color-cover.jpg',
       description:
         'Commanded to fight, warriors enter a brutal conflict where obedience determines every step — and compassion carries a terrible price. As soldiers, commanders, and lovers confront loss, they begin questioning the unseen powers controlling their lives. Why must people who share the same fears and hopes become enemies? Can anyone resist a fate chosen for them? Paint Me a Different Color is a haunting allegorical tale about war, identity, free will, and the fragile differences that divide us.',
     },
