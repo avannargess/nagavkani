@@ -112,6 +112,10 @@ nav a:hover { color: var(--accent); }
   letter-spacing: 0.6px;
   vertical-align: middle;
 }
+.badge-new:hover {
+  background: var(--accent-strong);
+  color: #1a1512;
+}
 
 /* Hero */
 .hero {
@@ -214,7 +218,13 @@ nav a:hover { color: var(--accent); }
   width: 48px;
   flex-shrink: 0;
 }
+.roadmap-item-text { flex: 1; }
 .roadmap-item h4 { margin: 0 0 6px; font-size: 20px; }
+.roadmap-buy {
+  flex-shrink: 0;
+  font-weight: 700;
+  white-space: nowrap;
+}
 
 /* Status pills */
 .status-pill {
@@ -283,6 +293,17 @@ nav a:hover { color: var(--accent); }
   border-radius: 10px;
   padding: 24px;
 }
+.book-card-art {
+  margin: -24px -24px 18px;
+  padding: 20px 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.book-card-art .cover-image.small {
+  max-width: 140px;
+  max-height: 210px;
+  width: auto;
+}
 .book-card h3 { font-size: 20px; margin: 10px 0 10px; }
 .book-card-actions {
   display: flex;
@@ -293,6 +314,13 @@ nav a:hover { color: var(--accent); }
 .buy-link { font-weight: 700; }
 
 /* Book detail page */
+.book-detail-grid {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+.book-detail-grid > div:first-child { flex: 1.3; }
+.book-detail-art { flex: 1; display: flex; justify-content: center; }
 .book-detail-text {
   max-width: 65ch;
   font-size: 17px;
@@ -356,6 +384,7 @@ nav a:hover { color: var(--accent); }
   .hero-inner { flex-direction: column-reverse; }
   .hero-text h1 { font-size: 34px; }
   .also-writing-inner { flex-direction: column; }
+  .book-detail-grid { flex-direction: column-reverse; }
   .about-grid { grid-template-columns: 1fr; }
   nav a { margin-left: 14px; font-size: 14px; }
   .container { padding: 44px 20px; }

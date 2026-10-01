@@ -14,23 +14,31 @@ function SeriesSection({ series, badge, hideIntro }) {
         </>
       )}
       <div className="book-list">
-        {series.books.map((b) => (
-          <article key={b.slug} className={`book-card status-${b.status}`}>
-            <span className="status-pill">{b.statusLabel}</span>
-            <h3>{b.title}</h3>
-            <p>{b.description.length > 140 ? b.description.slice(0, 140) + '…' : b.description}</p>
-            <div className="book-card-actions">
-              <Link href={`/books/${b.slug}`} className="small">
-                Read more
-              </Link>
-              {b.buyUrl && (
-                <a href={b.buyUrl} target="_blank" rel="noopener noreferrer" className="small buy-link">
-                  Buy on Amazon
-                </a>
+        {series.books.map((b) => {
+          const cover = b.coverImage
+          return (
+            <article key={b.slug} className={`book-card status-${b.status}`}>
+              {cover && (
+                <div className="book-card-art">
+                  <img src={cover} alt={`${b.title} cover`} className="cover-image small" />
+                </div>
               )}
-            </div>
-          </article>
-        ))}
+              <span className="status-pill">{b.statusLabel}</span>
+              <h3>{b.title}</h3>
+              <p>{b.description.length > 140 ? b.description.slice(0, 140) + '…' : b.description}</p>
+              <div className="book-card-actions">
+                <Link href={`/books/${b.slug}`} className="small">
+                  Read more
+                </Link>
+                {b.buyUrl && (
+                  <a href={b.buyUrl} target="_blank" rel="noopener noreferrer" className="small buy-link">
+                    Buy on Amazon
+                  </a>
+                )}
+              </div>
+            </article>
+          )
+        })}
       </div>
     </div>
   )
