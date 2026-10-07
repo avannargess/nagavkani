@@ -36,8 +36,9 @@ export const paintSeries = {
       slug: 'dub-me-a-different-title',
       order: 3,
       title: 'Dub Me a Different Title',
-      status: 'planned',
-      statusLabel: 'Planned',
+      status: 'coming soon',
+      statusLabel: 'Coming Soon',
+      isNew: true,
       description: 'Book Three in the Paint Me a Different Color series.',
     },
     {

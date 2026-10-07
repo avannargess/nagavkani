@@ -16,7 +16,7 @@ Her debut work, Paint Me a Different Color, is the first in a five-part allegori
             <h4>Quick facts</h4>
             <ul>
               <li>Pen name: N. A. Gavkani</li>
-              <li>Paint Me a Different Color (5-part series) — Book 1 available now, Book 2 coming soon</li>
+              <li>Paint Me a Different Color (5-part series) — Books 1 and 2 available now, Book 3 coming soon</li>
               <li>Dragon & Daffodil (YA Fantasy trilogy) — in progress</li>
             </ul>
             <div className="about-cta">
